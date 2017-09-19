@@ -1,0 +1,54 @@
+{
+  "scopeName": "source.cugutf8",
+  "name": "CUG utf8",
+  "fileTypes": [
+    "utf8"
+  ],
+  "patterns": [
+    {
+      "match": "#.+$",
+      "name": "comment"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string",
+      "patterns": [{
+          "match": "(\\\\s)(.)",
+          "name": "constant.character.escape.icon.cugutf8",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.cugutf8"
+            },
+            "2": {
+              "name": "constant.character.escape.variable.cugutf8"
+            }
+          }
+        },
+        {
+          "match": "(\\\\m)([0-9]\\.[0-9])",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.cugutf8"
+            },
+            "2": {
+              "name": "constant.character.escape.variable.cugutf8"
+            }
+          }
+        },
+        {
+          "match": "\\\\\\^\\^?",
+          "name": "comment.cugutf8"
+        },
+        {
+          "match": "[0-9A-Fa-f]{6}",
+          "name": "constant.character.escape.variable.cugutf8"
+        },
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.other.cugutf8"
+        }
+      ]
+    }
+  ]
+}
